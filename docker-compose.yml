@@ -1,7 +1,7 @@
 services:
   backend:
     build:
-      context: /Users/hurbanobenav/Downloads/Bank Statements
+      context: /home/haurbano/bank_statement/BankStatements
       dockerfile: backend/Dockerfile
     environment:
       UVICORN_HOST: 0.0.0.0
