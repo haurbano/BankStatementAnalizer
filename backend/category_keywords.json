@@ -1,0 +1,101 @@
+{
+  "Comida y restaurantes": [
+    "AVA",
+    "PIZZA",
+    "CREPES",
+    "PARRILLA",
+    "RESTAURANT",
+    "WOK",
+    "BURGER",
+    "CENADERO",
+    "VENTOLINI",
+    "CARBONES",
+    "CAFÉ",
+    "PANADERIA",
+    "DELIGOURME",
+    "LA AKASIA",
+    "IL FORNO",
+    "ASADOS",
+    "AJIACOS",
+    "RAPPI",
+    "LA BARRA SUR",
+    "MIRA UEPA VE",
+    "MISTER WINGS",
+    "STORIA D AMORE",
+    "CAMPAI EXPRESS",
+    "BRAZZ",
+    "MEDIUM CAFE",
+    "KFC",
+    "DEJAMU",
+    "HOTELES ESTELAR SUC CALI",
+    "HASHTAG FOOD",
+    "TAQUERIA EL BUEN PASTOR",
+    "ALTA PASTELERIA"
+  ],
+  "Supermercado": [
+    "EXITO",
+    "CARREFOUR",
+    "SUPERMERCADO",
+    "ALKOSTO"
+  ],
+  "Servicios": [
+    "EMCALI",
+    "COMCEL",
+    "MOVISTAR"
+  ],
+  "Salud y Belleza": [
+    "CLINICA",
+    "CRUZ VERDE",
+    "DROGAS",
+    "OPTICA",
+    "FUNDACION VALLE",
+    "NATHALY BARRIOS LONDON"
+  ],
+  "Suscripciones": [
+    "SPOTIFY",
+    "NETFLIX",
+    "APPLE",
+    "YOUTUBE",
+    "1PASSWORD"
+  ],
+  "Transporte": [
+    "TERPEL",
+    "DIDI",
+    "UBER",
+    "TAXI",
+    "MUBON",
+    "CREDIMAPFRE",
+    "GO CAR CENTER SAS"
+  ],
+  "Educación": [
+    "COLEGIO",
+    "OLIMPICO CALI"
+  ],
+  "Deporte": [
+    "BODYTECH",
+    "PADEL",
+    "LA CALDERA ROOF",
+    "CALDERA"
+  ],
+  "Hogar": [
+    "HOMECENTER",
+    "EMCALI",
+    "RESIDENCIAL"
+  ],
+  "Compras": [
+    "ALIEXPRESS",
+    "ZARA",
+    "H&M",
+    "AMAZON",
+    "MERCADO LIBRE",
+    "FALABELLA",
+    "TIENDAS PUNTO GEF",
+    "PUNTO BLANCO",
+    "DAFITI"
+  ],
+  "Diversion": [
+    "CINEPOLIS",
+    "Dos Amigos Bar"
+  ],
+  "Otros": []
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Panel de gastos</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1>Analizador de extractos</h1>
+        <p>Sube tu extracto en PDF y explora tus gastos por categoría.</p>
+        <span id="statement-label" class="statement-label">Selecciona un PDF para comenzar.</span>
+      </header>
+
+      <section class="uploader card">
+        <form id="upload-form">
+          <label for="pdf-file" class="file-label">Selecciona tu PDF</label>
+          <input type="file" id="pdf-file" accept="application/pdf" required />
+          <button type="submit" class="primary">Analizar extracto</button>
+        </form>
+        <p class="helper">Los datos se procesan localmente, no se almacenan.</p>
+        <div id="error-banner" class="banner hidden"></div>
+      </section>
+
+      <section class="layout">
+        <article class="card" id="categories-card">
+          <div class="card-header">
+            <h2>Categorías</h2>
+            <div class="totals">
+              <span>Total general</span>
+              <span class="total-amount" id="overall-total">—</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="categories-list" id="categories-list"></div>
+          </div>
+        </article>
+
+        <article class="card" id="transactions-card">
+          <div class="card-header">
+            <div class="transactions-header">
+              <div>
+                <h2 id="category-title">Selecciona una categoría</h2>
+                <span id="category-total" class="chip hidden"></span>
+              </div>
+              <button class="reset hidden" id="reset-button" type="button">
+                Ver todas las transacciones
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="search-bar">
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Buscar por descripción, categoría o fecha"
+                disabled
+              />
+              <button type="button" id="clear-search" class="ghost hidden">
+                Limpiar
+              </button>
+            </div>
+            <div id="transactions-container">
+              <p class="empty-state">Carga un PDF y explora tus transacciones.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="password-dialog" class="password-dialog">
+      <form method="dialog" id="password-form" class="password-form">
+        <h3>Ingrese la contraseña del PDF</h3>
+        <p class="password-hint" id="password-hint">Este archivo está protegido.</p>
+        <input
+          type="password"
+          id="password-input"
+          name="password"
+          placeholder="Contraseña"
+          required
+        />
+        <div class="dialog-actions">
+          <button value="cancel" type="button" id="password-cancel">Cancelar</button>
+          <button value="submit" type="submit" class="primary">Continuar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <template id="category-item-template">
+      <button class="category-item" type="button">
+        <span class="category-meta">
+          <strong class="category-name"></strong>
+          <small class="category-count"></small>
+        </span>
+        <span class="category-total"></span>
+      </button>
+    </template>
+
+    <template id="transactions-table-template">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th class="numeric">Monto</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

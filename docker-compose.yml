@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: /Users/hurbanobenav/Downloads/Bank Statements
+      dockerfile: backend/Dockerfile
+    environment:
+      UVICORN_HOST: 0.0.0.0
+      UVICORN_PORT: "8000"
+      LOG_LEVEL: info
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - /Users/hurbanobenav/Downloads/Bank Statements/backend/category_keywords.json:/app/backend/category_keywords.json:ro
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\"",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  web:
+    build:
+      context: /Users/hurbanobenav/Downloads/Bank Statements
+      dockerfile: frontend/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: statement-analyzer
+
