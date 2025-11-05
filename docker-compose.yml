@@ -1,7 +1,7 @@
 services:
   backend:
     build:
-      context: /home/haurbano/bank_statement/BankStatements
+      context: .
       dockerfile: backend/Dockerfile
     environment:
       UVICORN_HOST: 0.0.0.0
@@ -9,7 +9,7 @@ services:
       LOG_LEVEL: info
       PYTHONUNBUFFERED: "1"
     volumes:
-      - /home/haurbano/bank_statement/BankStatements/backend/category_keywords.json:/app/backend/category_keywords.json:ro
+      - ./backend/category_keywords.json:/app/backend/category_keywords.json:ro
     expose:
       - "8000"
     healthcheck:
@@ -25,7 +25,7 @@ services:
 
   web:
     build:
-      context: /home/haurbano/bank_statement/BankStatements
+      context: .
       dockerfile: frontend/Dockerfile
     depends_on:
       - backend

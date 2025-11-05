@@ -47,6 +47,7 @@ async def analyze(
         )
         return JSONResponse(result.to_dict())
     except HTTPException:
+        logger.warning("Error HTTP")
         raise
     except ValueError as exc:
         logger.warning("Contraseña incorrecta para PDF protegido")

@@ -23,14 +23,5 @@ EXPOSE 8000
 
 USER nobody
 
-CMD [
-  "gunicorn",
-  "backend.server:app",
-  "-k",
-  "uvicorn.workers.UvicornWorker",
-  "-b",
-  "0.0.0.0:8000",
-  "--log-level",
-  "info"
-]
+CMD ["gunicorn", "backend.server:app", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000", "--log-level", "info"]
 
