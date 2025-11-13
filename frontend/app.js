@@ -175,11 +175,13 @@ async function submitAnalysis(file, password) {
   return response.json();
 }
 
-fileInput.addEventListener("change", async () => {
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
   clearError();
 
   const file = fileInput.files?.[0];
   if (!file) {
+    showError("Selecciona un archivo PDF antes de continuar");
     return;
   }
 
@@ -228,6 +230,12 @@ fileInput.addEventListener("change", async () => {
   } finally {
     form.classList.remove("loading");
     form.reset();
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  if (fileInput.files.length > 0) {
+    form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
   }
 });
 
