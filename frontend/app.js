@@ -175,13 +175,11 @@ async function submitAnalysis(file, password) {
   return response.json();
 }
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+fileInput.addEventListener("change", async () => {
   clearError();
 
   const file = fileInput.files?.[0];
   if (!file) {
-    showError("Selecciona un archivo PDF antes de continuar");
     return;
   }
 

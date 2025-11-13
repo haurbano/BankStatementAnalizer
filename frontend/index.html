@@ -16,9 +16,8 @@
 
       <section class="uploader card">
         <form id="upload-form">
-          <label for="pdf-file" class="file-label">Selecciona tu PDF</label>
-          <input type="file" id="pdf-file" accept="application/pdf" required />
-          <button type="submit" class="primary">Analizar extracto</button>
+          <label for="pdf-file" class="file-label primary">Analizar extracto</label>
+          <input type="file" id="pdf-file" accept="application/pdf" required hidden />
         </form>
         <p class="helper">Los datos se procesan localmente, no se almacenan.</p>
         <div id="error-banner" class="banner hidden"></div>
