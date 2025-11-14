@@ -11,7 +11,6 @@
       <header class="header">
         <h1>Analizador de extractos</h1>
         <p>Sube tu extracto en PDF y explora tus gastos por categoría.</p>
-        <span id="statement-label" class="statement-label">Selecciona un PDF para comenzar.</span>
       </header>
 
       <section class="uploader card">
@@ -19,8 +18,8 @@
           <label for="pdf-file" class="file-label">Sube tu extracto</label>
           <input type="file" id="pdf-file" accept="application/pdf" required />
           <button type="submit" class="primary">Analizar extracto</button>
-        </form>
-        <p class="helper">Los datos se procesan localmente, no se almacenan.</p>
+          <span id="statement-label" class="statement-label">Selecciona un PDF para comenzar.</span>
+        </form>      
         <div id="error-banner" class="banner hidden"></div>
       </section>
 
